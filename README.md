@@ -1,4 +1,4 @@
-# Virescotech1
+# program to draw a CO2 molecule split
 Cheminformatics1
 import java.awt.*;
 import java.awt.geom.*;
