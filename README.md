@@ -1,49 +1,29 @@
-# Program to draw CO2 molecule
+# Java program to show the reaction of CO2 molecule with NaOH
 Cheminformatics1
-import java.awt.*;
-import java.awt.geom.*;
+import java.util.Scanner;
 
-public class CO2 {
+public class CO2NaOHReaction {
 
-    public static void main(String[] args) {
-                                              // Create a new frame
-                                              Frame frame = new Frame("CO2 Molecule");
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
-                                              // Create a new canvas
-                                              Canvas canvas = new Canvas();
+    // Get the concentration of CO2 in the air.
+    System.out.println("Enter the concentration of CO2 in the air (in mol/L): ");
+    double co2Concentration = scanner.nextDouble();
 
-                                              // Set the canvas size
-                                                 canvas.setSize(400, 400);
+    // Get the concentration of NaOH in the solution.
+    System.out.println("Enter the concentration of NaOH in the solution (in mol/L): ");
+    double naohConcentration = scanner.nextDouble();
 
-                                              // Add the canvas to the frame
-                                                 frame.add(canvas);
+    // Calculate the equilibrium constant.
+    double equilibriumConstant = 1e-6;
 
-                                              // Create a new graphics object
-                                              Graphics g = canvas.getGraphics();
+    // Calculate the equilibrium concentrations.
+    double na2co3Concentration = equilibriumConstant * co2Concentration * naohConcentration;
+    double h2oConcentration = equilibriumConstant * co2Concentration * naohConcentration;
 
-                                              // Draw the CO2 molecule
-                                                 drawCO2(g);
-
-                                              // Display the frame
-                                                frame.setVisible(true);
-                                           }
-
-    private static void drawCO2(Graphics g) {
-                                              // Set the line width
-                                                 g.setLineWidth(2);
-
-                                                  // Set the line color
-                                                   g.setColor(Color.black);
-
-                                                 // Draw the carbon atom
-                                                   g.drawOval(100, 100, 50, 50);
-
-                                                // Draw the oxygen atoms
-                                                 g.drawOval(75, 75, 25, 25);
-                                                 g.drawOval(125, 75, 25, 25);
-
-                                               // Draw the bonds between the atoms
-                                                 g.drawLine(100, 100, 75, 75);
-                                                  g.drawLine(100, 100, 125, 75);
-                                           }
+    // Print the results.
+    System.out.println("The concentration of Na2CO3 in the solution is " + na2co3Concentration + " mol/L.");
+    System.out.println("The concentration of H2O in the solution is " + h2oConcentration + " mol/L.");
+  }
 }
