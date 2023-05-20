@@ -1,4 +1,4 @@
-# Virescotech1
+# Program to draw CO2 molecule
 Cheminformatics1
 import java.awt.*;
 import java.awt.geom.*;
